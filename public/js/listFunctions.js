@@ -32,6 +32,7 @@ else
 
 $( document ).ready(function() {
 
+  initializePage();
   // $("#newItemForm").submit(function(e) {
   //   e.preventDefault();
   //   alert("The item has been added");
@@ -60,10 +61,16 @@ for (var i=0; i<list.length; i++) {
       $(this).find("#remove").toggle();
     }
   }, false);
-//   $("#itemList .item").click(function(e){
-//     e.preventDefault();
-//     $(this).remove();
-//   });
 };
 });
 
+function initializePage() {
+  console.log("hi");
+  $(".test").click(buttonUsed);
+}
+
+function buttonUsed(e) {
+  console.log("test");
+  e.preventDefault();
+  gtag('event', 'buttonUsed');
+}
